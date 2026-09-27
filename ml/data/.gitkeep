@@ -1,0 +1,7 @@
+# SentinelOps ML Data Directory
+# Phase 4A generated files are stored here.
+#
+# Files created at runtime:
+#   telemetry_raw.csv       — Raw Prometheus snapshots (unlabeled)
+#   telemetry_labeled.csv   — Labeled dataset with is_anomaly column
+#   chaos_history.json      — Cached chaos history used for labeling

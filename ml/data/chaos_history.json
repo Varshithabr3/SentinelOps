@@ -1,0 +1,304 @@
+[
+  {
+    "id": "chaos_f0642778",
+    "service": "user-service",
+    "failure_type": "traffic_spike",
+    "parameters": {
+      "requests_per_second": 20,
+      "duration_seconds": 10,
+      "target_url": "http://localhost:8001/users"
+    },
+    "start_timestamp": "2026-09-27T07:40:28.090983+00:00",
+    "end_timestamp": "2026-09-27T07:40:38.155057+00:00",
+    "duration_seconds": 10.06,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_e3c6c785",
+    "service": "payment-service",
+    "failure_type": "dependency_failure",
+    "parameters": {
+      "dependency_name": "bank-gateway",
+      "failure_mode": "error_503",
+      "duration_seconds": 10
+    },
+    "start_timestamp": "2026-09-27T07:40:15.063227+00:00",
+    "end_timestamp": "2026-09-27T07:40:25.060879+00:00",
+    "duration_seconds": 10.0,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_2d3ea6b8",
+    "service": "order-service",
+    "failure_type": "service_unavailability",
+    "parameters": {
+      "duration_seconds": 10
+    },
+    "start_timestamp": "2026-09-27T07:40:02.038572+00:00",
+    "end_timestamp": "2026-09-27T07:40:12.039865+00:00",
+    "duration_seconds": 10.0,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_7b1a66fd",
+    "service": "user-service",
+    "failure_type": "error_rate",
+    "parameters": {
+      "error_rate": 0.8,
+      "status_code": 500,
+      "message": "Simulated 500",
+      "duration_seconds": 10
+    },
+    "start_timestamp": "2026-09-27T07:39:49.003441+00:00",
+    "end_timestamp": "2026-09-27T07:39:59.005230+00:00",
+    "duration_seconds": 10.0,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_54b6d1a9",
+    "service": "payment-service",
+    "failure_type": "latency",
+    "parameters": {
+      "delay_seconds": 2.5,
+      "probability": 1.0,
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:39:30.974330+00:00",
+    "end_timestamp": "2026-09-27T07:39:45.976046+00:00",
+    "duration_seconds": 15.0,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_8ac324d7",
+    "service": "order-service",
+    "failure_type": "memory_growth",
+    "parameters": {
+      "mb_allocated": 100,
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:39:12.951968+00:00",
+    "end_timestamp": "2026-09-27T07:39:28.001395+00:00",
+    "duration_seconds": 15.05,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_b1d983b9",
+    "service": "user-service",
+    "failure_type": "cpu_spike",
+    "parameters": {
+      "duration_seconds": 15,
+      "load_percentage": 85.0,
+      "workers": 4
+    },
+    "start_timestamp": "2026-09-27T07:38:54.575087+00:00",
+    "end_timestamp": "2026-09-27T07:39:09.646130+00:00",
+    "duration_seconds": 15.07,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_4d8d0d10",
+    "service": "user-service",
+    "failure_type": "traffic_spike",
+    "parameters": {
+      "requests_per_second": 5,
+      "duration_seconds": 5,
+      "target_url": "http://localhost:8001/users"
+    },
+    "start_timestamp": "2026-09-27T07:29:03.351197+00:00",
+    "end_timestamp": "2026-09-27T07:29:08.378244+00:00",
+    "duration_seconds": 5.03,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_a1dcac3d",
+    "service": "payment-service",
+    "failure_type": "dependency_failure",
+    "parameters": {
+      "dependency_name": "bank-gateway",
+      "failure_mode": "timeout",
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:29:03.171251+00:00",
+    "end_timestamp": "2026-09-27T07:29:03.265095+00:00",
+    "duration_seconds": 0.09,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_77be4b3a",
+    "service": "order-service",
+    "failure_type": "service_unavailability",
+    "parameters": {
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:29:02.998167+00:00",
+    "end_timestamp": "2026-09-27T07:29:03.042589+00:00",
+    "duration_seconds": 0.04,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_cc35e1d8",
+    "service": "user-service",
+    "failure_type": "error_rate",
+    "parameters": {
+      "error_rate": 1.0,
+      "status_code": 500,
+      "message": "Simulated 500",
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:29:02.838053+00:00",
+    "end_timestamp": "2026-09-27T07:29:02.918101+00:00",
+    "duration_seconds": 0.08,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_5da5922a",
+    "service": "payment-service",
+    "failure_type": "latency",
+    "parameters": {
+      "delay_seconds": 2.0,
+      "probability": 1.0,
+      "duration_seconds": 30
+    },
+    "start_timestamp": "2026-09-27T07:29:00.536709+00:00",
+    "end_timestamp": "2026-09-27T07:29:02.793077+00:00",
+    "duration_seconds": 2.26,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_fc91380e",
+    "service": "order-service",
+    "failure_type": "memory_growth",
+    "parameters": {
+      "mb_allocated": 50,
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:28:58.158363+00:00",
+    "end_timestamp": "2026-09-27T07:29:00.486623+00:00",
+    "duration_seconds": 2.33,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_89e24458",
+    "service": "user-service",
+    "failure_type": "cpu_spike",
+    "parameters": {
+      "duration_seconds": 15,
+      "load_percentage": 70.0,
+      "workers": 4
+    },
+    "start_timestamp": "2026-09-27T07:28:55.731366+00:00",
+    "end_timestamp": "2026-09-27T07:28:57.954948+00:00",
+    "duration_seconds": 2.22,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_c42d6c0c",
+    "service": "user-service",
+    "failure_type": "traffic_spike",
+    "parameters": {
+      "requests_per_second": 5,
+      "duration_seconds": 5,
+      "target_url": "http://localhost:8001/users"
+    },
+    "start_timestamp": "2026-09-27T07:22:18.985505+00:00",
+    "end_timestamp": "2026-09-27T07:22:24.058888+00:00",
+    "duration_seconds": 5.07,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_4d2c3bd2",
+    "service": "payment-service",
+    "failure_type": "dependency_failure",
+    "parameters": {
+      "dependency_name": "bank-gateway",
+      "failure_mode": "timeout",
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:22:18.833873+00:00",
+    "end_timestamp": "2026-09-27T07:22:18.911397+00:00",
+    "duration_seconds": 0.08,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_50bf93ce",
+    "service": "order-service",
+    "failure_type": "service_unavailability",
+    "parameters": {
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:22:18.701670+00:00",
+    "end_timestamp": "2026-09-27T07:22:18.734950+00:00",
+    "duration_seconds": 0.03,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_23a42245",
+    "service": "user-service",
+    "failure_type": "error_rate",
+    "parameters": {
+      "error_rate": 1.0,
+      "status_code": 500,
+      "message": "Simulated 500",
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:22:18.559449+00:00",
+    "end_timestamp": "2026-09-27T07:22:18.606503+00:00",
+    "duration_seconds": 0.05,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_7d7ce7cd",
+    "service": "payment-service",
+    "failure_type": "latency",
+    "parameters": {
+      "delay_seconds": 2.0,
+      "probability": 1.0,
+      "duration_seconds": 30
+    },
+    "start_timestamp": "2026-09-27T07:22:16.444809+00:00",
+    "end_timestamp": "2026-09-27T07:22:18.531683+00:00",
+    "duration_seconds": 2.09,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_78f38d98",
+    "service": "order-service",
+    "failure_type": "memory_growth",
+    "parameters": {
+      "mb_allocated": 50,
+      "duration_seconds": 15
+    },
+    "start_timestamp": "2026-09-27T07:22:14.274628+00:00",
+    "end_timestamp": "2026-09-27T07:22:16.365999+00:00",
+    "duration_seconds": 2.09,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_63874c1b",
+    "service": "user-service",
+    "failure_type": "cpu_spike",
+    "parameters": {
+      "duration_seconds": 15,
+      "load_percentage": 70.0,
+      "workers": 4
+    },
+    "start_timestamp": "2026-09-27T07:22:11.874828+00:00",
+    "end_timestamp": "2026-09-27T07:22:14.095260+00:00",
+    "duration_seconds": 2.22,
+    "status": "stopped"
+  },
+  {
+    "id": "chaos_c60068df",
+    "service": "user-service",
+    "failure_type": "cpu_spike",
+    "parameters": {
+      "duration_seconds": 20,
+      "load_percentage": 90.0,
+      "workers": 4
+    },
+    "start_timestamp": "2026-09-27T07:07:48.059172+00:00",
+    "end_timestamp": "2026-09-27T07:08:08.178180+00:00",
+    "duration_seconds": 20.12,
+    "status": "stopped"
+  }
+]

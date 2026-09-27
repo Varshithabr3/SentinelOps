@@ -1,0 +1,70 @@
+services:
+  user-service:
+    build:
+      context: ./services/user-service
+    container_name: sentinelops-user-service
+    ports:
+      - "8001:8001"
+    environment:
+      - PORT=8001
+    restart: unless-stopped
+
+  payment-service:
+    build:
+      context: ./services/payment-service
+    container_name: sentinelops-payment-service
+    ports:
+      - "8003:8003"
+    environment:
+      - PORT=8003
+    restart: unless-stopped
+
+  order-service:
+    build:
+      context: ./services/order-service
+    container_name: sentinelops-order-service
+    ports:
+      - "8002:8002"
+    environment:
+      - PORT=8002
+      - PAYMENT_SERVICE_URL=http://payment-service:8003
+    depends_on:
+      - payment-service
+    restart: unless-stopped
+
+  api-gateway:
+    build:
+      context: ./gateway
+    container_name: sentinelops-api-gateway
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - USER_SERVICE_URL=http://user-service:8001
+      - ORDER_SERVICE_URL=http://order-service:8002
+      - PAYMENT_SERVICE_URL=http://payment-service:8003
+    depends_on:
+      - user-service
+      - order-service
+      - payment-service
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: sentinelops-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+    depends_on:
+      - user-service
+      - order-service
+      - payment-service
+    restart: unless-stopped
+
+networks:
+  default:
+    name: sentinelops-network
